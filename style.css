@@ -1,0 +1,247 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./assets/background-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+}
+
+h1{
+    text-align: center;
+    color: #7D00C6;
+}
+#start-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+#start-overlay #start-button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #94007e;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#start-overlay #start-button:hover {
+    background-color: #5a0068;
+}
+
+
+.container{
+    background: #fff;
+    border: solid purple;
+    padding: 2rem 7rem;
+    border-radius: 14px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.labels { 
+    display: flex; 
+    justify-content: space-between; 
+    margin: 1rem 0; 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+}
+
+.container .score-board{
+    text-align: center;
+    color: #94007e;
+}
+
+.result_images{
+    display: flex;
+    column-gap: 7rem;
+}
+
+.container.start .user_result{
+    transform-origin: left;
+    animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake{
+    50% {
+        transform: rotate(15deg);
+    }
+}
+
+.container.start .cpu_result{
+    transform-origin: right;
+    animation: cpuShake 0.7s ease infinite;
+}
+
+@keyframes cpuShake{
+    50% {
+        transform: rotate(-15deg);
+    }
+}
+
+.result_images img{
+    width: 100px;
+}
+
+.user_result img{
+    transform: rotate(90deg);
+}
+
+.cpu_result img{
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result{
+    text-align: center;
+    font-size: 2rem;
+    color: #7D00C6;
+    margin-top: 1.5rem;
+}
+
+
+.option_image{
+    width: 60px;
+}
+
+.option_image img{
+    width: 60px;
+}
+
+
+.option_images{
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+}
+
+.container.start .option_images{
+    pointer-events: none;
+}
+
+.option_image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.option_image:hover{
+    opacity: 1;
+    background-color: #fefcff;
+}
+
+.option_image.active{
+    opacity: 1;
+}
+
+.option_image img{
+    pointer-events: none;
+}
+
+.option_image p{
+    color: #7D00C6;
+    font-size: 1.235rem;
+    margin-top: 1rem;
+    pointer-events: none;
+}
+
+.music-btn,
+.sound-btn,
+.info-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: solid purple;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40%;
+    background-color: #ffffff;
+}
+
+.sound-btn {
+    right: 50px;
+}
+
+.info-btn{
+    right: 90px;
+}
+
+.info-btn img,
+.music-btn img,
+.sound-btn img{
+    width: 30px;
+    height: 30px;
+}
+
+.music-btn:hover img,
+.sound-btn:hover img, 
+.info-btn:hover img{
+    transform: scale(1.115);
+    transition: transform 0.2s ease-in-out;
+}
+
+.info-popup { 
+    display: none; 
+    position:absolute;
+    border: 1px solid purple;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem; 
+    background-color: #f9e5fbcc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    font-size: 0.9rem;
+    color: #333;
+    width: 300px; 
+} 
+
+.info-popup h3 { 
+    margin-bottom: 0.5rem; 
+} 
+
+.info-popup ul { 
+    list-style-type: disc; 
+    padding-left: 1.5rem;
+}
+
+#close-info { 
+    margin-top: 1rem; 
+    padding: 0.5rem 1rem; 
+    background-color: #94007e; 
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-size: 0.9rem; 
+} 
+
+#close-info:hover { 
+    background-color: #5a0068; 
+}

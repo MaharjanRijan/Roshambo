@@ -12,7 +12,13 @@ Welcome to **Roshambo**, a fun and interactive Rock, Paper, Scissors game! This 
 
 ## 📂 Project Structure
 The project follows a simple and organized folder structure:
-|-- assets/ # Contains images, sounds, and background music | |-- images/ # All game-related images | |-- sounds/ # Sound effects and background music |-- index.html # Main HTML file |-- style.css # CSS file for styling |-- script.js # JavaScript file for game logic |-- README.md # Project documentation (this file)
+|-- assets/ # Contains images, sounds, and background music 
+   ||-- images/ # All game-related images
+   ||-- sounds/ # Sound effects and background music 
+|-- index.html # Main HTML file 
+|-- style.css # CSS file for styling 
+|-- script.js # JavaScript file for game logic 
+|-- README.md # Project documentation (this file)
 
 ---
 

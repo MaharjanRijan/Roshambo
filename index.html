@@ -1,463 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rijan Maharjan</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Roshambo</title>
 </head>
+
 <body>
-    <!--Navigation Bar-->
+    <div id="start-overlay">
+        <button id="start-button">Start Game</button>
+    </div>
+    <section class="container">
+            <h1>Roshambo (Rock  Paper  Scissors)</h1>
+            <div class="score-board">
+                <div class="user-score">User Wins: 0</div>
+                <div class="cpu-score">CPU Wins: 0</div>
+            </div>
+            <div class="result_field">
+                <div class="labels">
+                    <span class="user-label">You</span>
+                    <span class="cpu-label">CPU</span>
+                </div>
+                <div class="result_images">
+                    <span class="user_result">
+                        <img src="./assets/rock.png" alt="clenched fist icon">
+                    </span>
+                    <span class="cpu_result">
+                        <img src="./assets/rock.png" alt="clenched fist icon">
+                    </span>
+                </div>
+            </div>
 
-    <!--Desktop Nav-->
-    <nav id="desktop-nav">
-        <div class="logo">Rijan Maharjan</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><img 
-                    id="modeToggle"
-                    class="icon color-icon"
-                    src="assets/theme_light.png" 
-                    src-light="assets/theme_light.png"
-                    src-dark="assets/theme_dark.png"
-                    alt="light theme icon"
-                    ></li>
+            <div class="result">Let's Play!!</div>
+
+        <div class="option_images">
+            <span class="option_image">
+                <img src="./assets/rock.png" alt="clenched fist icon">
+                <p>Rock</p>
+            </span>
+            <span class="option_image">
+                <img src="./assets/paper.png" alt="hand icon">
+                <p>Paper</p>
+            </span>
+            <span class="option_image">
+                <img src="./assets/scissors.png" alt="hand peace icon">
+                <p>Scissors</p>
+            </span>
+    </div>
+    </section>
+    
+
+    <section class="features">
+        <button class="sound-btn">
+            <img src="./assets/sound-on.png" alt="Sound On Icon" id="sound-icon">
+        </button>
+        <audio id="choice-sound">
+            <source src="./assets/choice-sound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <button class="music-btn">
+            <img src="./assets/music-on.png" alt="Music On Icon" id="music-icon">
+        </button>
+        <audio id="bg-music" loop>
+            <source src="./assets/background-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <button class="info-btn">
+            <img src="./assets/info-icon.png" alt="Info Icon" id="info-icon">
+        </button>
+        <div id="info-popup" class="info-popup">
+            <h3>How to Play</h3>
+            <p>Welcome to Roshambo!</p>
+            <ul>
+                <li>Select Rock, Paper, or Scissors by clicking on one of the options below.</li>
+                <li>The CPU will randomly select its choice.</li>
+                <li>The winner is determined based on the classic rules:
+                    <ul>
+                        <li>Rock beats Scissors</li>
+                        <li>Scissors beats Paper</li>
+                        <li>Paper beats Rock</li>
+                    </ul>
+                </li>
+                <li>The first to win 3 rounds wins the game!</li>
+                <li>You can toggle the background music and sound effects using the buttons above.</li>
             </ul>
-        </div>
-    </nav>
-
-    <!--Mobile Nav-->
-    <nav id="mobile-nav"> 
-        <div class="logo">Rijan Maharjan</div>
-        <div class="mobile-nav-links">
-            <div class="mobile-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                <li><img 
-                    id="modeToggle2"
-                    class="icon color-icon"
-                    src="assets/theme_light.png" 
-                    src-light="assets/theme_light.png"
-                    src-dark="assets/theme_dark.png"
-                    alt="light theme icon"></li>
-            </div>
-        </div>
-    </nav>
-
-    <!--Section-->
-    <Section id="profile">
-        <div class="section__pic-container">
-            <img 
-            src="assets\profile.jpeg" 
-            alt="Rijan Maharjan Profile picture"
-            />
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Rijan Maharjan</h1>
-            <p class="section__text__p2">Student: Computer System Technician - Software Support</p>
-            <div class="btn-container">
-                <button 
-                class="btn btn-color-2" 
-                onclick="window.open('./assets/resume.pdf')"
-                >
-                    Download CV
-                </button>
-
-                <button 
-                class="btn btn-color-1" 
-                onclick="location.href='#contact'"
-                >
-                   Contact Info
-                </button>
-            </div>
-
-            <div id="social-container">
-                <img 
-                src="assets/linkedin_light.png"
-                src-light="assets/linkedin_light.png"
-                src-dark="assets/linkedin_dark.png"
-                alt="Rijan Maharjan - Linkedin Profile"
-                class="icon linkedin-icon" 
-                onclick="location.href='https://www.linkedin.com/in/rijanmaharjan0528/'"
-                />
-            
-                <img 
-                src="assets/github_light.png"
-                src-light="assets/github_light.png"
-                src-dark="assets/github_dark.png" 
-                alt="Rijan Maharjan - GitHub Profile"
-                class="icon github-icon" 
-                onclick="location.href='https://github.com/MaharjanRijan'"
-                />
-            </div>
-        </div>
-    </Section>
-
-
-    <section id="about">
-        <img 
-        src="./assets/prevarrow_light.png"
-        src-light="./assets/prevarrow_light.png"
-        src-dark="./assets/prevarrow_dark.png" 
-        alt="up arrow icon"
-        class="icon arrow-1"
-        onclick="location.href='#profile'"
-        />
-
-        <p class="section__text__p1">Get to Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="section__pic-container">
-                <img
-                src="./assets/profile.jpeg"
-                alt="profile picture"
-                class="about-pic"
-                />
-            </div>
-
-            <div class="about-details-container">
-                <div class="about-container">
-                    <div class="details-container">
-                        <img
-                        src="./assets/experience_light.png"
-                        src-light="./assets/experience_light.png"
-                        src-dark="./assets/experience_dark.png"
-                        alt="experience icon"
-                        class="icon"
-                        />
-
-                        <h1>Experience</h1>
-                        <p>0 years </br> Full Stack Development</p>
-                    </div>
-
-                    <div class="details-container">
-                        <img
-                        src="./assets/education_light.png"
-                        src-light="./assets/education_light.png"
-                        src-dark="./assets/education_dark.png"
-                        alt="education icon"
-                        class="icon"
-                        />
-
-                        <h1>Education</h1>
-                        <p>Diploma in Computer System Technician -Software Support</br>Mohawk College, Hamilton, ON, Canada</p>
-                    </div>
-                </div>
-
-                    <div class="text-container">
-                        <p>
-                           I am a dedicated and ambitious individual with a passion for technology, learning, and helping others.
-                           I thrive on challenges and have strong commitment to personal growth and community impact. 
-                           My short-term goal is to graduate with good marks and secure a role in softeare development or IT support. 
-                           Long-term, I aspire to make a meaningful contribution to the tech industry.
-                        </p>
-                    </div>
-                
-            </div>
-        </div>
-        <img 
-        src="./assets/nextarrow_light.png" 
-        src-light="./assets/nextarrow_light.png" 
-        src-dark="./assets/nextarrow_dark.png" 
-        alt="down arrow icon"
-        class="icon arrow-2"
-        onclick="location.href='#experience'"
-        />
-    </section>
-
-    <section id="experience">
-        <img 
-        src="./assets/prevarrow_light.png"
-        src-light="./assets/prevarrow_light.png"
-        src-dark="./assets/prevarrow_dark.png"
-        alt="up arrow icon"
-        class="icon arrow-1"
-        onclick="location.href='#experience'"
-        />
-
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-            <div class="about-container">
-                <div class="details-container">
-                   <h2 class="experience-sub-title">Frontend Development</h2>
-                   <div class="article-container">
-                    <article>
-                            <img
-                            src="./assets/checkmark_light.png"
-                            src-light="./assets/checkmark_light.png"
-                            src-dark="./assets/checkmark_dark.png"
-                            alt="Experience icon"
-                            class="icon"
-                            />
-                        <div>
-                            <h3>HTML</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <img
-                        src="./assets/checkmark_light.png"
-                        src-light="./assets/checkmark_light.png"
-                        src-dark="./assets/checkmark_dark.png"
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                        <div>
-                            <h3>CSS</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <img
-                        src="./assets/checkmark_light.png"
-                        src-light="./assets/checkmark_light.png"
-                        src-dark="./assets/checkmark_dark.png"
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                        <div>
-                            <h3>JavaScript</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <img
-                        src="./assets/checkmark_light.png"
-                        src-light="./assets/checkmark_light.png"
-                        src-dark="./assets/checkmark_dark.png"
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                        <div>
-                            <h3>HTML</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                   </div> 
-                </div>
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Frontend Development</h2>
-                    <div class="article-container">
-                     <article>
-                        <img
-                        src="./assets/checkmark_light.png"
-                        src-light="./assets/checkmark_light.png"
-                        src-dark="./assets/checkmark_dark.png"
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                        <div>
-                            <h3>HTML</h3>
-                            <p>Experienced</p>
-                        </div>
-                     </article>
- 
-                     <article>
-                        <img
-                        src="./assets/checkmark_light.png"
-                        src-light="./assets/checkmark_light.png"
-                        src-dark="./assets/checkmark_dark.png"
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                         <div>
-                            <h3>CSS</h3>
-                            <p>Experienced</p>
-                         </div>
-                     </article>
- 
-                     <article>
-                        <img
-                        src="./assets/checkmark_light.png"
-                        src-light="./assets/checkmark_light.png"
-                        src-dark="./assets/checkmark_dark.png"
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                         <div>
-                             <h3>JavaScript</h3>
-                             <p>Experienced</p>
-                         </div>
-                     </article>
- 
-                     <article>
-                        <img
-                        src="./assets/checkmark_light.png"
-                        src-light="./assets/checkmark_light.png"
-                        src-dark="./assets/checkmark_dark.png"
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                         <div>
-                             <h3>HTML</h3>
-                             <p>Experienced</p>
-                         </div>
-                     </article>
-                    </div> 
-            </div>
+            <button id="close-info">Close</button>
         </div>
 
-        <img 
-        src="./assets/nextarrow_light.png" 
-        src-light="./assets/nextarrow_light.png" 
-        src-dark="./assets/nextarrow_dark.png" 
-        alt="down arrow icon"
-        class="icon arrow-2"
-        onclick="location.href='#projects'"
-        />
-    </section>
-
-    <section id="projects">
-        <img 
-        src="./assets/prevarrow_light.png"
-        src-light="./assets/prevarrow_light.png"
-        src-dark="./assets/prevarrow_dark.png"
-        alt="up arrow icon"
-        class="icon arrow-1"
-        onclick="location.href='#experience'"
-        />
-        <p class="section__text__p1">Browse my Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-container">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img
-                        src="./assets/project-1.png"
-                        alt="Project 1"
-                        class="project-img"
-                        />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Guess the Number</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/MaharjanRijan/guessTheNumber', '_blank')">
-                            GitHub
-                        </button>
-
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://maharjanrijan.github.io/guessTheNumber/', '_blank')">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img
-                        src="./assets/project-2.png"
-                        alt="Project 2"
-                        class="project-img"
-                        />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Tic Tac Toe</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/MaharjanRijan/ticTacToe', '_blank')">
-                            GitHub
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://maharjanrijan.github.io/ticTacToe', '_blank')">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img
-                        src="./assets/project-3.png"
-                        alt="Project 3"
-                        class="project-img"
-                        />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Roshambo</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/MaharjanRijan/Roshambo', '_blank')">
-                            GitHub
-                        </button>
-
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://maharjanrijan.github.io/Roshambo', '_blank')">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <img 
-        src="./assets/nextarrow_light.png" 
-        src-light="./assets/nextarrow_light.png" 
-        src-dark="./assets/nextarrow_dark.png" 
-        alt="down arrow icon"
-        class="icon arrow-2"
-        onclick="location.href='#projects'"
-        />
-    </section>
-
-    <section id="contact">
-        <p class="section__text__p1">Get in Touch</p>
-        <h1 class="title">Contact me</h1>
-        
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img
-                src="./assets/email_light.png"
-                src-light="./assets/email_light.png"
-                src-dark="./assets/email_dark.png"
-                alt="Email icon"
-                class=" icon contact-icon"
-                />
-                <p><a href="mailto:rijan.maharjan@mohawkcollege.ca">rijan.maharjan@mohawkcollege.ca</a></p>
-            </div>
-
-            <div class="contact-info-container">
-                <img
-                src="./assets/linkedin_puffy_light.png"
-                src-light="./assets/linkedin_puffy_light.png"
-                src-dark="./assets/linkedin_puffy_dark.png"
-                alt="Linkedin icon"
-                class=" icon contact-icon linkedin-icon"
-                />
-                <p><a href="https://linkedin.com/in/rijanmaharjan0528/">Linkedin</a></p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Copyright &#169; 2024 Rijan Maharjan. All rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+        <script src="script.js" defer></script>
 </body>
+
 </html>
-
-<!--Dont Forget
-
-1. Image Reference:
-    a. Linkedin
-    b. GitHub
-    https://icons8.com/-->
